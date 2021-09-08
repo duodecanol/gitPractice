@@ -1,7 +1,7 @@
 #!usr/bin/env python3
 
 def gogo():
-  pass
+  return True
 
 def avg(values:list):
   return sum(values) / len(values)
