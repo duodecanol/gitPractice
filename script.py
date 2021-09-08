@@ -1,6 +1,7 @@
 #!usr/bin/env python3
 
 def gogo():
+  print("Hello World!")
   return True
 
 def avg(values:list):
