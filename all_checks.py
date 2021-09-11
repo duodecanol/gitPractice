@@ -33,14 +33,21 @@ def check_no_network():
 		return True
 
 def main():
-	if check_reboot():
-		print("Pending Reboot.")
+	checks = [
+		(check_reboot, "Pending Reboot."),
+		(check_root_full, "Root partition full"),
+
+		(check_no_network, "No working network.")
+		]
+
+	everython_ok=True
+	for check, msg in checks:
+		if check():
+			print(msg)
+			everython_ok=False
+	
+	if not everython_ok:
 		sys.exit(1)
-	if check_disk_full("/", 2, 10):
-		print("Disk Full.")
-		sys.exit(1)
-	if check_no_network():
-		print("No working network.")
 		
 	print("Everython OK.")
 	sys.exit(0)
