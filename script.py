@@ -9,3 +9,4 @@ def avg(values:list):
 
 if __name__=="__main__":
   gogo()
+  print(avg([3, 4, 5, 6])
